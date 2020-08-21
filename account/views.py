@@ -93,7 +93,7 @@ def edit(request):
                    'profile_form': profile_form})
 
 
-@login_required
+
 def user_list(request):
     users = User.objects.filter(is_active=True)
     return render(request,
