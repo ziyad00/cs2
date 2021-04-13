@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+ 
+<h1>People</h1>
+<div id="people-list">
+  {% for tour in tours %}
+    <div class="user">
+      <a href="{{ tour.get_absolute_url}}">
+        {{tour.tr_name}}
+    </a>
+      <div class="info">
+        <a href="{{ tour.get_absolute_url}}">
+            start  {{ tour.start_date }}
+         end    {{tour.end_date}}
+        </a>
+
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls')),
-    path(r'^messages/', include('postman.urls', namespace='postman')),
+    path('tour/', include('tour.urls', namespace='tour')),
+
 
 
 ]

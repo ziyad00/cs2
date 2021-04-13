@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  
+<h1>People</h1>
+<div id="people-list">
+  {% for team in teams %}
+  {% for no_card in no_cards %}
+  {% for best_player in best_players %}
+
+  
+    <div class="user">
+      
+        {{team.team_group}}
+    
+      <div class="info">
+      best player {{best_player}}
+      players with no card 
+      {% for i in no_card %}
+        {{i}}
+
+      {% endfor %}
+{%endfor%}
+{%endfor%}
+
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

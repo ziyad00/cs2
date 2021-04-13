@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'easy_thumbnails',
-    'bootstrap4',
-    'privatemessages',
-    'postman',
+    'tour',
+   # 'easy_thumbnails',
+   # 'bootstrap4',
+   # 'privatemessages',
+  #  'postman',
 
 
 
@@ -139,4 +140,3 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-POSTMAN_AUTO_MODERATE_AS = True  # default is None

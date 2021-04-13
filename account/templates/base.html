@@ -19,14 +19,13 @@
         <a href="{% url "dashboard" %}">My dashboard</a>
       </li>
       </li>
-      <li {% if section == "people" %}class="selected"{% endif %}>
-        <a href="{% url "user_list" %}">People</a>
-      </li>
-      <li >
-
-      <a href="%5Emessages/inbox/">inbox</a>
-      </li>
      
+      <li {% if section == "tour" %}class="selected"{% endif %}>
+        <a href="{% url "tour:tour" %}">tour</a>
+      </li>
+
+      
+ 
 
     </ul>
  
