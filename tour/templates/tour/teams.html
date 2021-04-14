@@ -6,27 +6,69 @@
   
 <h1>People</h1>
 <div id="people-list">
-  {% for team in teams %}
-  {% for no_card in no_cards %}
-  {% for best_player in best_players %}
-
   
+  {% for team in teams %}
+  {% with index=forloop.counter0 %} 
+  {{ no_cards.index }}
+  {% endwith %}
+
+  {% endfor %}
     <div class="user">
       
-        {{team.team_group}}
     
       <div class="info">
-      best player {{best_player}}
-      players with no card 
-      {% for i in no_card %}
-        {{i}}
-
-      {% endfor %}
-{%endfor%}
+        {% for no_card in no_cards %}
+       
+  
 {%endfor%}
 
-      </div>
-    </div>
-  {% endfor %}
+      </div>    </div>
+
+
+
+
 </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Group</th>
+        <th scope="col">Best Players</th>
+        <th scope="col">Players with no cards</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for team in teams %}
+
+      <tr>
+        <th scope="row">1</th>
+        <td>{{team.team_group}}
+        </td>
+        <td> {% for best_player in best_players %}
+      
+          best player {{best_player}}      {% endfor %}
+        </td>
+        <td>players with no card 
+      
+          {% with index=forloop.counter0 %} 
+  {{ no_cards.index }}
+  {% endwith %}
+        </td>
+      </tr>
+      {% endfor %}
+
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}
