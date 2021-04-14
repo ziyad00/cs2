@@ -105,6 +105,7 @@ class player_booked(models.Model):
     booking_time = models.DateTimeField()
     play_schedule = models.CharField(max_length=255)
     player_half = models.BooleanField()
+    sent_off = models.CharField(max_length=1)
 
 class player_in_out(models.Model):
     match_no   = models.ForeignKey(match_played, on_delete=models.CASCADE)
