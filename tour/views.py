@@ -40,7 +40,8 @@ def teams(request, id):
             if player.cards.count()==0:
                 players_not_having_cards[i].append(player)
         i+=1
-        best_players.append(best_player)
+        if best_player != None:
+            best_players.append(best_player)
 
 
     #print(players_not_having_cards)
