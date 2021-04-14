@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load filter %}
 
 {% block title %}Dashboard{% endblock %}
 
@@ -7,20 +8,11 @@
 <h1>People</h1>
 <div id="people-list">
   
-  {% for team in teams %}
-  {% with index=forloop.counter0 %} 
-  {{ no_cards.index }}
-  {% endwith %}
-
-  {% endfor %}
     <div class="user">
       
     
       <div class="info">
-        {% for no_card in no_cards %}
-       
-  
-{%endfor%}
+
 
       </div>    </div>
 
@@ -45,30 +37,19 @@
         <th scope="row">1</th>
         <td>{{team.team_group}}
         </td>
-        <td> {% for best_player in best_players %}
+        <td> best players {% for best_player in best_players %}
       
-          best player {{best_player}}      {% endfor %}
+          {{best_player}}      {% endfor %}
         </td>
         <td>players with no card 
       
-          {% with index=forloop.counter0 %} 
-  {{ no_cards.index }}
-  {% endwith %}
+          {{ no_cards|get_item:forloop.counter0 }}
+
         </td>
       </tr>
       {% endfor %}
 
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+ 
     </tbody>
   </table>
 {% endblock %}
