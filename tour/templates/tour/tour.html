@@ -4,21 +4,47 @@
 
 {% block content %}
  
-<h1>People</h1>
+<h1>Tournaments</h1>
 <div id="people-list">
-  {% for tour in tours %}
+  
     <div class="user">
-      <a href="{{ tour.get_absolute_url}}">
+      
+    
+      <div class="info">
+
+
+      </div>    </div>
+
+
+
+
+</div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">tournament</th>
+      <th scope="col">start date</th>
+      <th scope="col">end date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tour in tours %}
+
+    <tr>
+      <th scope="row">   {{forloop.counter }}</th>
+      <td> <a href="{{ tour.get_absolute_url}}">
         {{tour.tr_name}}
     </a>
-      <div class="info">
-        <a href="{{ tour.get_absolute_url}}">
-            start  {{ tour.start_date }}
-         end    {{tour.end_date}}
-        </a>
+      </td>
+      <td>   <a href="{{ tour.get_absolute_url}}">
+          {{ tour.start_date }}</a>
+      </td>
+      <td>  <a href="{{ tour.get_absolute_url}}">
+          {{tour.end_date}}</a>
+     
 
-      </div>
-    </div>
-  {% endfor %}
-</div>
+      </td>
+    </tr>
+    {% endfor %}
 {% endblock %}

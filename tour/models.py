@@ -39,6 +39,9 @@ class player(models.Model):
     player_name = models.CharField(max_length=255)
     position_to_play  = models.ForeignKey(playing_position, on_delete=models.CASCADE)
     date_of_birth = models.DateField()
+    
+    def __str__(self) -> str:
+        return self.player_name
 
 
 class coach(models.Model):

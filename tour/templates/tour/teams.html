@@ -5,7 +5,7 @@
 
 {% block content %}
   
-<h1>People</h1>
+<h1>Teams</h1>
 <div id="people-list">
   
     <div class="user">
@@ -34,16 +34,22 @@
       {% for team in teams %}
 
       <tr>
-        <th scope="row">1</th>
+        <th scope="row">   {{forloop.counter }}</th>
         <td>{{team.team_group}}
         </td>
-        <td> best players {% for best_player in best_players %}
+        <td>{% for best_player in best_players %}
       
           {{best_player}}      {% endfor %}
         </td>
-        <td>players with no card 
+        <td>
       
-          {{ no_cards|get_item:forloop.counter0 }}
+          {% with card=no_cards|get_item:forloop.counter0 %}
+          {% for i in card %}
+          {{i}}, 
+          {%empty%}
+          None
+          {%endfor %}
+          {% endwith %}
 
         </td>
       </tr>
