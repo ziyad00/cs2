@@ -4,7 +4,10 @@
 {% block title %}People{% endblock %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 
-  <h1>Please Log in</h1>
+{% else %}
+<h1>Please Log in</h1>
+{% endif %}
   </div>
 {% endblock %}
