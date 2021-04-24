@@ -42,20 +42,26 @@
           {% if team ==  team2 %}
           
           {{player}}
+         
           {% endif %}    
+          {% empty %}
+          None
       {% endfor %}
       
 
         </td>
         <td>
-      
-          {% with card=no_cards|get_item:forloop.counter0 %}
-          {% for i in card %}
+          {% for team2, player in no_cards_dic.items %}
+          {% if team ==  team2 %}
+          {% for i in player %}
           {{i}}, 
           {%empty%}
           None
           {%endfor %}
-          {% endwith %}
+          {% endif %}    
+      {% endfor %}
+      
+      
 
         </td>
       </tr>

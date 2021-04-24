@@ -27,8 +27,11 @@ def teams(request, id):
     best_players_dic = {}
     best_players = []
     players_not_having_cards = []
+    players_not_having_cards_dic = {}
+
     i = 0
     for team in teams:
+        players_not_having_cards_dic[team] = []
         best_player = None
         players = team.players.all()
         players_not_having_cards.append([])
@@ -39,6 +42,7 @@ def teams(request, id):
                 if player.goals.count() > best_player.goals.count():
                     best_player = player
             if player.cards.count()==0:
+                players_not_having_cards_dic[team].append(player)
                 players_not_having_cards[i].append(player)
         i+=1
         if best_player != None and best_player.goals.count() >0:
@@ -53,4 +57,4 @@ def teams(request, id):
     return render(request,
                   'tour/teams.html',
                   {'section': 'tour','teams':teams,
-                    'best_players': best_players,'no_cards':players_not_having_cards,'best_players_dic':best_players_dic})
+                    'best_players': best_players,'no_cards':players_not_having_cards,'best_players_dic':best_players_dic,'no_cards_dic':players_not_having_cards_dic})
