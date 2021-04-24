@@ -47,7 +47,7 @@ def teams(request, id):
         i+=1
         if best_player != None and best_player.goals.count() >0:
             #team = best_player.teams
-            best_players_dic = {team:best_player}
+            best_players_dic[team] = best_player
             best_players.append(best_player)
     
     #print(players_not_having_cards)

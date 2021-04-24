@@ -34,7 +34,7 @@ class playing_position(models.Model):
 
 
 class player(models.Model):
-    team_id = models.ForeignKey(kfupm_team, on_delete=models.CASCADE, related_name='players')
+    team_id = models.ManyToManyField(kfupm_team, related_name='players')
     jersey_no = models.IntegerField()
     player_name = models.CharField(max_length=255)
     position_to_play  = models.ForeignKey(playing_position, on_delete=models.CASCADE)
