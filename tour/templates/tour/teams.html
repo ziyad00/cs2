@@ -38,6 +38,9 @@
         <td>{{team.team_group}}
         </td>
         <td>
+          {% if team in  best_players_dic %}
+          {{best_players_dic.team}}
+          {% endif %}
           {% with best_player=best_players|get_item:forloop.counter0 %}
       
           {{best_player}}                {% endwith %}
