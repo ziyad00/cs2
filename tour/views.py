@@ -27,7 +27,7 @@ def teams(request, id):
     best_players = []
     players_not_having_cards = []
     i = 0
-    for team in teams:
+    for team in kfupm_tournament.teams.all():
         best_player = None
         players = team.players.all()
         players_not_having_cards.append([])
@@ -46,8 +46,6 @@ def teams(request, id):
     print(players_not_having_cards)
     print(best_players)
 
-    #print(players_not_having_cards)
-    #print(best_players)
 
     return render(request,
                   'tour/teams.html',
