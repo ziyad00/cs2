@@ -38,8 +38,10 @@
         <td>{{team.team_group}}
         </td>
         <td>{% for best_player in best_players %}
+          {% with best_player=best_players|get_item:forloop.counter0 %}
       
-          {{best_player}}      {% endfor %}
+          {{best_player}}                {% endwith %}
+
         </td>
         <td>
       
