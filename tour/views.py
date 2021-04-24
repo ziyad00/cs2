@@ -27,7 +27,7 @@ def teams(request, id):
     best_players = []
     players_not_having_cards = []
     i = 0
-    for team in kfupm_tournament.teams.all():
+    for team in teams:
         best_player = None
         players = team.players.all()
         players_not_having_cards.append([])
