@@ -44,8 +44,8 @@ def teams(request, id):
             print(best_player.team.all())
             best_players.append(best_player)
     
-    print(players_not_having_cards)
-    print(best_players)
+    #print(players_not_having_cards)
+    #print(best_players)
 
 
     return render(request,
