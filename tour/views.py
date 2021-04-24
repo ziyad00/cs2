@@ -33,7 +33,7 @@ def teams(request, id):
         players_not_having_cards.append([])
         for player in players:
             
-            if player.goals.count() > best_player.goals.count():
+            if best_player != None and player.goals.count() > best_player.goals.count():
                 best_player = player
             if player.cards.count()==0:
                 players_not_having_cards[i].append(player)
